@@ -12,10 +12,13 @@
 }
 
 .item{
-    display: none;
     position: relative;
     height: 30vh;
     width: 40vw;
+}
+
+img{
+    display: none;
 }
 .active{
     display: block;

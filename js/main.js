@@ -18,7 +18,7 @@ const imageArray = [
     ];
 
 // mi prendo l'elemento di contenitore
-const itemsContainer = document.querySelector(".items-container");
+const itemsContainer = document.querySelector(".item");
 
 
 // estrapolo gli elementi dell'array
@@ -29,12 +29,7 @@ for (let i = 0; i < imageArray.length; i++) {
 
     // creare ad ogni interazione l'elemento da inserire
 
-    let itemContent = `
-            <div class="item">
-                <img src="${itemImg}">
-                <div class="up"><i class="fa-regular fa-circle-up"></i></div>
-                <div class="down"><i class="fa-regular fa-circle-down"></i></div>
-            </div>`;
+    let itemContent = `<img class="image" src="${itemImg}">`;
     
     // inseriamo il nuovo elemento nel contenitore
     itemsContainer.innerHTML += itemContent;    
@@ -43,7 +38,7 @@ for (let i = 0; i < imageArray.length; i++) {
 
 //  seleziono tutti gli elementi item in pagina
 
-const items = document.getElementsByClassName("item");
+const items = document.getElementsByClassName("image");
 
 console.log(items);
 
@@ -75,6 +70,8 @@ nextUp.addEventListener("click",
             // andiamo a mettere la classe active all'elemento 
 
             items[activeItem].classList.add("active");
+
+            console.log(activeItem);
        
 
         }
