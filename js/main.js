@@ -81,9 +81,10 @@ nextUp.addEventListener("click",
     }
 )
 
-items[activeItem].classList.add("active");
+// items[activeItem].classList.add("active");
 
 //  seleziono il bottone nextDown
+
 
 const nextDown = document.querySelector(".down");
 
@@ -93,7 +94,7 @@ nextDown.addEventListener("click",
 
         // verifichiamo se nn siamo alla fine della lista delle immagini
 
-        if(activeItem < imageArray.length - 1){
+        if(activeItem < imageArray.length + 3){
             // elimino l'active sull'elemento precedente attivo
             items[activeItem].classList.remove("active");
 
