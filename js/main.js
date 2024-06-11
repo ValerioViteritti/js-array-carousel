@@ -53,33 +53,23 @@ const nextUp = document.querySelector(".up");
 // gestiamo il click sul nextUp
 nextUp.addEventListener("click",
     function () {
-
         // verifichiamo se nn siamo alla fine della lista delle immagini
-
         if(activeItem < imageArray.length - 1){
             // elimino l'active sull'elemento precedente attivo
             items[activeItem].classList.remove("active");
-
-            //  incremento il valore dell'indice (activeItem)
-            
+            //  incremento il valore dell'indice (activeItem)           
             // activeItem= activeItem + 1;
             activeItem++;
-
             // andiamo a mettere la classe active all'elemento 
-
             items[activeItem].classList.add("active");
-
-            console.log(activeItem);
-       
+            console.log(activeItem);    
         } else {
             items[activeItem].classList.remove("active");
             activeItem = 0;
             items[activeItem].classList.add("active");
-
-
         }
     }
-)
+);
 
 // Seleziono il bottone nextDown
 const nextDown = document.querySelector(".down");
