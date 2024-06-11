@@ -44,8 +44,6 @@ console.log(items);
 
 let activeItem = 0;
 
-
-
 items[activeItem].classList.add("active");
 
 //  seleziono il bottone nextUp
@@ -73,45 +71,31 @@ nextUp.addEventListener("click",
 
             console.log(activeItem);
        
+        } else {
+            items[activeItem].classList.remove("active");
+            activeItem = 0;
+            items[activeItem].classList.add("active");
+
 
         }
-
-
-
     }
 )
 
-// items[activeItem].classList.add("active");
-
-//  seleziono il bottone nextDown
-
-
+// Seleziono il bottone nextDown
 const nextDown = document.querySelector(".down");
 
-// gestiamo il click sul nextDown
-nextDown.addEventListener("click",
-    function () {
-
-        // verifichiamo se nn siamo alla fine della lista delle immagini
-
-        if(activeItem < imageArray.length + 3){
-            // elimino l'active sull'elemento precedente attivo
-            items[activeItem].classList.remove("active");
-
-            //  diminuisco il valore dell'indice (activeItem)
-            
-            // activeItem= activeItem - 1;
-            activeItem--;
-
-            // andiamo a mettere la classe active all'elemento 
-
-            items[activeItem].classList.add("active");
-       
-
-        }
-
+// Gestiamo il click sul nextDown
+nextDown.addEventListener("click", function() {
+    if(activeItem > 0) {
+        items[activeItem].classList.remove("active");
+        activeItem--;
+        items[activeItem].classList.add("active");
+    } else {
+        items[activeItem].classList.remove("active");
+        activeItem = imageArray.length - 1;
+        items[activeItem].classList.add("active");
     }
-)
+});
     
 
    
